@@ -4,7 +4,7 @@
 
 
 
-SnakeModel::SnakeModel(QObject *parent) : QObject(parent), m_gen(m_rd()), m_dis(0, 40)
+SnakeModel::SnakeModel(QObject *parent) : QObject(parent), m_gen(m_rd()), m_dis(0, 39)
 {
 
 }
@@ -99,7 +99,7 @@ void SnakeModel::generateApple()
         }
     }while (generateAgain);
 
-    qDebug() << "generated apple:" << m_apple.first << "," << m_apple.second;
+    //qDebug() << "generated apple:" << m_apple.first << "," << m_apple.second;
 
     emit tileColorChanged(m_apple.first, m_apple.second, "red");
 }

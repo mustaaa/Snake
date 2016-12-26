@@ -7,6 +7,7 @@ Rectangle {
     id: root
     width: 800
     height: 800
+    //anchors.fill: parent
     visible: true
     focus: true
     Keys.onUpPressed: {
@@ -54,13 +55,15 @@ Rectangle {
         anchors.fill: parent
         rows: 40
         Repeater {
+            anchors.fill: parent
             id: myRepeater
 
             model: 1600
 
             Rectangle {
                 id: rect
-                width: 20; height: 20
+                width: root.width / 40;
+                height: root.height / 40;
                 border.width: 1
                 border.color: "white"
                 color: "yellow"
@@ -73,7 +76,7 @@ Rectangle {
     Timer {
         id: snakeTimer
 
-        interval: 100
+        interval: 150
         running: true;
         repeat: true;
         onTriggered: {
@@ -81,7 +84,6 @@ Rectangle {
         }
     }
 }
-
 //Window {
 //    id: root
 
